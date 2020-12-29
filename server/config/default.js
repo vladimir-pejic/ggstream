@@ -1,7 +1,7 @@
 const config = {
     server: {
         secret: 'gOs4dgG8jjdAw36v8w2IusG8391sdLsOaj2TslAL95sOsxlm',
-        port : 3333
+        port : 443
     },
     rtmp_server: {
         rtmp: {
