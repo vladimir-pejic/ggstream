@@ -13,7 +13,7 @@ const express = require('express'),
     node_media_server = require('./media_server'),
     thumbnail_generator = require('./cron/thumbnails');
 
-mongoose.connect('mongodb://127.0.0.1/nodeStream' , { useNewUrlParser: true });
+mongoose.connect('mongodb://127.0.0.1/nodeStream' , { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));

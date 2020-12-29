@@ -1,2 +1,2 @@
-RewriteEngine On
-RewriteRule "^/?(.*)" "http://%{HTTP_HOST}:3333/$1" [L,R,NE]
+#RewriteEngine On
+#RewriteRule "^/?(.*)" "http://%{HTTP_HOST}:3333/$1" [L,R,NE]
