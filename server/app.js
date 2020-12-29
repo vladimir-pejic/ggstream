@@ -11,7 +11,13 @@ const express = require('express'),
     port = config.server.port,
     app = express(),
     node_media_server = require('./media_server'),
-    thumbnail_generator = require('./cron/thumbnails');
+    thumbnail_generator = require('./cron/thumbnails')
+    cors = require('cors');
+
+let corsOptions = {
+    origin: 'http://'+ config.domain +':'+ config.server.port,
+    optionsSuccessStatus: 200 // For legacy browser support
+}
 
 mongoose.connect('mongodb://127.0.0.1/nodeStream' , { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -35,6 +41,7 @@ app.use(Session({
     saveUninitialized : false,
 }));
 
+app.use(cors(corsOptions));
 app.use(passport.initialize());
 app.use(passport.session());
 
